@@ -1,5 +1,5 @@
 ## Description
-Todo List mobile app based built with **flutter** for both android and iOS.
+Todo List mobile app built with **flutter** for both android and iOS.
 
 
 ## Screenshots
