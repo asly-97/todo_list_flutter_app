@@ -1,7 +1,7 @@
 ## Description
 Todo List mobile app built with **flutter** for both android and iOS.
 
-
+Provider design pattern & ChangeNotifier
 ## Screenshots
 <picture>
   <img alt="Screenshot" src="/assets/tasks.png" width="240"/>
