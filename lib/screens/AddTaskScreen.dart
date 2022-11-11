@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_list_flutter/models/task.dart';
+import 'package:todo_list_flutter/models/todolist.dart';
 
 class AddTaskScreen extends StatefulWidget {
-  final void Function(String taskTitle) onAddTask;
-
-  AddTaskScreen({required this.onAddTask});
-
   @override
   State<AddTaskScreen> createState() => _AddTaskScreenState();
 }
@@ -71,7 +70,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           TextButton(
             onPressed: () {
               if (newTaskTitle.isNotEmpty) {
-                widget.onAddTask(newTaskTitle);
+                Provider.of<TodoList>(context, listen: false)
+                    .addNewTask(newTaskTitle);
                 Navigator.pop(context);
               }
             },
