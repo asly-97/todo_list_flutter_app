@@ -4,8 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:todo_list_flutter/screens/AddTaskScreen.dart';
 import 'package:todo_list_flutter/widgets/task_tile.dart';
 import 'package:todo_list_flutter/widgets/tasks_list.dart';
+import 'package:todo_list_flutter/models/task.dart';
 
-class TasksScreen extends StatelessWidget {
+class TasksScreen extends StatefulWidget {
+  @override
+  State<TasksScreen> createState() => _TasksScreenState();
+}
+
+class _TasksScreenState extends State<TasksScreen> {
+  List<Task> tasks = [
+    Task(title: 'Buy milk', isDone: true),
+    Task(title: 'Take out the trash'),
+    Task(title: 'Buy toilette paper'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +32,13 @@ class TasksScreen extends StatelessWidget {
                       child: Container(
                     padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: AddTaskScreen(),
+                    child: AddTaskScreen(
+                      onAddTask: (taskTitle) {
+                        setState(() {
+                          tasks.add(Task(title: taskTitle));
+                        });
+                      },
+                    ),
                   )));
         },
         child: Icon(Icons.add),
@@ -81,7 +99,9 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(30),
                 ),
               ),
-              child: TasksList(),
+              child: TasksList(
+                tasks: tasks,
+              ),
             ),
           ),
         ],
