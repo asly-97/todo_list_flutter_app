@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:todo_list_flutter/app_style.dart';
 import 'package:todo_list_flutter/models/todolist.dart';
 import 'package:todo_list_flutter/screens/AddTaskScreen.dart';
 import 'package:todo_list_flutter/widgets/tasks_list.dart';
@@ -9,7 +10,7 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: colorPrimary,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -24,7 +25,7 @@ class TasksScreen extends StatelessWidget {
                   )));
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: colorAccent,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,9 +44,9 @@ class TasksScreen extends StatelessWidget {
                   child: Icon(
                     Icons.list,
                     size: 30,
-                    color: Colors.lightBlueAccent,
+                    color: colorWhite,
                   ),
-                  backgroundColor: Colors.white,
+                  backgroundColor: colorAccent,
                   radius: 30,
                 ),
                 SizedBox(
@@ -62,7 +63,7 @@ class TasksScreen extends StatelessWidget {
                 Text(
                   '${Provider.of<TodoList>(context).tasks.length} Tasks',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: colorGrey,
                     fontSize: 20,
                   ),
                 ),
@@ -75,7 +76,15 @@ class TasksScreen extends StatelessWidget {
                 horizontal: 20,
               ),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: colorPrimary,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    offset: Offset(0, -5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                  ),
+                ],
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),

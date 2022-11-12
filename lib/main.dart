@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_list_flutter/models/task.dart';
 import 'package:todo_list_flutter/models/todolist.dart';
 import 'package:todo_list_flutter/screens/tasks_screen.dart';
 
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<TodoList>(
       create: (_) => TodoList(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: TasksScreen(),
       ),
     );

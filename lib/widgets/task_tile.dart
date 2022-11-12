@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_flutter/app_style.dart';
 
 class TaskTile extends StatelessWidget {
   final String title;
@@ -19,10 +20,11 @@ class TaskTile extends StatelessWidget {
       title: Text(
         title,
         style: TextStyle(
+            color: isChecked ? colorGrey : colorWhite,
             decoration: isChecked ? TextDecoration.lineThrough : null),
       ),
       trailing: Checkbox(
-        activeColor: Colors.lightBlueAccent,
+        activeColor: colorAccent,
         value: isChecked,
         onChanged: (newValue) {
           checkboxCallback(newValue!);

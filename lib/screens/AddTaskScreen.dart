@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_list_flutter/app_style.dart';
 import 'package:todo_list_flutter/models/task.dart';
 import 'package:todo_list_flutter/models/todolist.dart';
 
@@ -19,7 +20,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         vertical: 30,
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: colorPrimary,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -33,7 +34,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 30,
-              color: Colors.lightBlueAccent,
+              color: colorWhite,
             ),
           ),
           SizedBox(
@@ -47,19 +48,23 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             },
             autofocus: true,
             style: TextStyle(
-              color: Colors.lightBlueAccent,
+              color: colorWhite,
             ),
             decoration: InputDecoration(
+              hintText: 'Task title...',
+              hintStyle: TextStyle(
+                color: colorGrey,
+              ),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.lightBlueAccent,
-                  width: 5.00,
+                  color: colorAccent,
+                  width: 2.00,
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.lightBlueAccent,
-                  width: 5.00,
+                  color: colorAccent,
+                  width: 2.00,
                 ),
               ),
             ),
@@ -77,7 +82,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             },
             child: Text('Add'),
             style: TextButton.styleFrom(
-              backgroundColor: Colors.lightBlueAccent,
+              backgroundColor: colorAccent,
               foregroundColor: Colors.white,
             ),
           )

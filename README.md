@@ -10,9 +10,15 @@ This is a simple Todo List mobile app built with **flutter** for both android an
 
 ## Screenshots
 <picture>
-  <img alt="Screenshot" src="/assets/tasks.png" width="240"/>
+  <img alt="Screenshot" src="/assets/screen1.png" width="240"/>
 </picture>
 <picture>
-  <img alt="Screenshot" src="/assets/add_task.png" width="240"/>
+  <img alt="Screenshot" src="/assets/screen2.png" width="240"/>
+</picture>
+<picture>
+  <img alt="Screenshot" src="/assets/screen3.png" width="240"/>
+</picture>
+<picture>
+  <img alt="Screenshot" src="/assets/screen4.png" width="240"/>
 </picture>
 
