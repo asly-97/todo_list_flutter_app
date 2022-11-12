@@ -18,7 +18,4 @@ This is a simple Todo List mobile app built with **flutter** for both android an
 <picture>
   <img alt="Screenshot" src="/assets/screen3.png" width="240"/>
 </picture>
-<picture>
-  <img alt="Screenshot" src="/assets/screen4.png" width="240"/>
-</picture>
 

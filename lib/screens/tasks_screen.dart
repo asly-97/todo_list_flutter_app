@@ -72,8 +72,10 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20,
+              padding: EdgeInsets.only(
+                left: 20,
+                right: 20,
+                bottom: 120,
               ),
               decoration: BoxDecoration(
                 color: colorPrimary,
@@ -90,9 +92,27 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(30),
                 ),
               ),
-              child: TasksList(
-                  //tasks: Provider.of<TodoList>(context).tasks,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: TasksList(
+                        //tasks: Provider.of<TodoList>(context).tasks,
+                        ),
                   ),
+                  Divider(
+                    height: 25,
+                    thickness: 2,
+                    color: colorWhite,
+                  ),
+                  Text(
+                    'Hold press on the task to delete it.',
+                    style: TextStyle(
+                      color: colorGrey,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
