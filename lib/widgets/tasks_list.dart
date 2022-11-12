@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_list_flutter/models/task.dart';
 import 'package:todo_list_flutter/models/todolist.dart';
 import 'package:todo_list_flutter/widgets/task_tile.dart';
 
@@ -11,14 +12,15 @@ class TasksList extends StatelessWidget {
         return ListView.builder(
             itemCount: todolist.count,
             itemBuilder: (context, index) {
+              final Task task = todolist.tasks.elementAt(index);
               return TaskTile(
-                title: todolist.tasks.elementAt(index).title,
-                isChecked: todolist.tasks.elementAt(index).isDone,
+                title: task.title,
+                isChecked: task.isDone,
                 checkboxCallback: (state) {
-                  /*
-                setState(() {
-                  tasks.elementAt(index).toggleDone();
-                });*/
+                  todolist.toggleTask(task);
+                },
+                onDeleteTask: () {
+                  todolist.deleteTask(task);
                 },
               );
             });

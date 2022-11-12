@@ -71,7 +71,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             onPressed: () {
               if (newTaskTitle.isNotEmpty) {
                 Provider.of<TodoList>(context, listen: false)
-                    .addNewTask(newTaskTitle);
+                    .addTask(newTaskTitle);
                 Navigator.pop(context);
               }
             },

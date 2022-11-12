@@ -15,8 +15,18 @@ class TodoList extends ChangeNotifier {
 
   List<Task> get tasks => _tasks.toList(growable: false);
 
-  void addNewTask(String title) {
+  void addTask(String title) {
     _tasks.add(Task(title: title));
+    notifyListeners();
+  }
+
+  void toggleTask(Task task) {
+    task.toggleDone();
+    notifyListeners();
+  }
+
+  void deleteTask(Task task) {
+    _tasks.remove(task);
     notifyListeners();
   }
 }
